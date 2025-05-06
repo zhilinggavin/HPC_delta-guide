@@ -74,6 +74,7 @@ You can use `sinfo -s` to see which partitions are currently available.
 ### Submit Jobs
 #### Batch scripts (`sbatch`) or interactive jobs (`srun`, `salloc`).
 - Account name: `bemy-dtai-gh`
+- sbatch
     ```bash
     # Use the `accounts` command to list the accounts
     $ accounts
@@ -82,16 +83,21 @@ You can use `sinfo -s` to see which partitions are currently available.
     $ sbatch tensorflow_cpu.slurm
     Submitted batch job 2337924
     $ squeue -u $USER
-            JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-            2337924 ghx4         tfcpu  mylogin  R       0:46      1 gh006
+
     # Cancel a job
     $ scancel <job_id>
-
+    ```
+- Interactive job: srun
+    ```
     # Single core with 20GB of memory, with one task.
     srun --account=account_name --partition=ghx4 \
     --nodes=1 --gpus-per-node=1 --tasks=1 \
     --tasks-per-node=1 --cpus-per-task=8 --mem=20g \
     --pty bash
+    ```
+- Interactive job in `Jupyter Notebook`
+    ```
+    srun --account=bemy-dtai-gh --partition=ghx4-interactive --nodes=1 --gpus-per-node=1 --time=00:30:00 --mem=32g jupyter-notebook --no-browser --port=50100 --ip=0.0.0.0
     ```
 
 #### Key Options for `srun`
