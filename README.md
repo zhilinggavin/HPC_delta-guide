@@ -27,7 +27,7 @@ module load <module_name>
 # Unload a module
 module unload <module_name>
 
-# Searching for Modules” section.:
+# Searching for Modules section
 module spider <module_part_name>
 ```
 
@@ -48,10 +48,12 @@ conda init
 ## Data Management
 Guidelines for managing data on the HPC system:
 - Use `scp` or `rsync` to transfer files between local and HPC.
-- Store env and scripts at `home`: `/u/hzhou14`
+- Use `quota` to show avaliabe storage path and space left 
+- Store conda env and scripts at `home`: `/u/hzhou14`
 - Store large datasets at `/work/nvme/bemy/hzhou14`  
     The training data are stored at `/work/nvme/bemy/hzhou14/CT-RATE_train_eval*`  
     The validation data are stored at `/work/nvme/bemy/hzhou14/CT-RATE_valid_eval_0k-5k`
+
 
 ---
 
