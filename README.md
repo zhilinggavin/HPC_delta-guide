@@ -48,8 +48,10 @@ conda init
 ## Data Management
 Guidelines for managing data on the HPC system:
 - Use `scp` or `rsync` to transfer files between local and HPC.
-- Store large datasets in designated storage locations.
-- Regularly clean up unused files to save space.
+- Store env and scripts at `home`: `/u/hzhou14`
+- Store large datasets at `/work/nvme/bemy/hzhou14`  
+    The training data are stored at `/work/nvme/bemy/hzhou14/CT-RATE_train_eval*`  
+    The validation data are stored at `/work/nvme/bemy/hzhou14/CT-RATE_valid_eval_0k-5k`
 
 ---
 
